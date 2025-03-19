@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">dashbTest</string>
+    <string name="obrazk">obrazk</string>
+    <string name="rocket_image" />
 </resources>

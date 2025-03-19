@@ -40,4 +40,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+
+    // Retrofit pro práci s API
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Glide pro načítání obrázků
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation("com.android.volley:volley:1.2.1")  // HTTP requesty
+    implementation("com.google.code.gson:gson:2.10")  // Práce s JSON
+    implementation("androidx.recyclerview:recyclerview:1.2.1")  // RecyclerView pro seznam
+    implementation("com.squareup.picasso:picasso:2.8")  // Načítání obrázků
 }
