@@ -2,4 +2,6 @@
     <string name="app_name">dashbTest</string>
     <string name="obrazk">obrazk</string>
     <string name="rocket_image" />
+    <string name="back"><![CDATA[<-]]></string>
+    <string name="forward"><![CDATA[->]]></string>
 </resources>

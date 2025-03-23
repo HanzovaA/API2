@@ -10,6 +10,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.dashbtest.calendar.MainActivity4;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         CardView myCard2 = findViewById(R.id.my_card2);
         myCard2.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+            startActivity(intent);
+        });
+        CardView myCard3 = findViewById(R.id.my_card3);
+        myCard3.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, MainActivity4.class);
             startActivity(intent);
         });
 

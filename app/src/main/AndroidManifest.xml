@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DashbTest"
         tools:targetApi="31">
+        <activity
+            android:name=".calendar.EventDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calendar.DayDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calendar.EventEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".calendar.MainActivity4"
+            android:exported="false"/>
         <activity
             android:name=".MainActivity3"
             android:exported="false" />
@@ -29,6 +46,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"/>
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
     </application>
 
 </manifest>
