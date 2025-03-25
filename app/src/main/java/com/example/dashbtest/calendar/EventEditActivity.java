@@ -67,11 +67,13 @@ public class EventEditActivity extends AppCompatActivity {
     }
     private void checkPermissions() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
+                ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_IMAGES) != PackageManager.PERMISSION_GRANTED||
                 ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             // Pokud oprávnění nejsou udělena, požádej o ně
             ActivityCompat.requestPermissions(this,
                     new String[]{
                             Manifest.permission.READ_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_MEDIA_IMAGES,
                             Manifest.permission.CAMERA
                     },
                     REQUEST_CODE_PERMISSIONS);
@@ -96,10 +98,10 @@ public class EventEditActivity extends AppCompatActivity {
     }
 
     private void openImagePicker() {
-        Intent intent = new Intent();
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Vyberte fotografii"), PICK_IMAGE_REQUEST);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
     @Override
@@ -110,6 +112,7 @@ public class EventEditActivity extends AppCompatActivity {
                 // Výběr z galerie
                 Uri imageUri = data.getData();
                 imagePath = imageUri.toString();
+
             } else if (requestCode == REQUEST_IMAGE_CAPTURE) {
                 // Výběr z kamery
                 // imagePath je již nastaveno v createImageFile()
