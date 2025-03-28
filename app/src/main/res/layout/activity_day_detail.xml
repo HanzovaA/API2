@@ -36,9 +36,10 @@
 
         <Button
             android:id="@+id/buttonSky"
-            android:layout_width="215dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Zobrazit oblohu " />
+            android:text="Zobrazit oblohu "
+            android:textColorLink="#80DEEA" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView

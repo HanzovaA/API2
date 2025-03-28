@@ -7,9 +7,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dashbtest.MainActivity3;
 import com.example.dashbtest.R;
 
 import java.time.LocalDate;
@@ -35,7 +37,25 @@ public class DayDetailActivity extends AppCompatActivity {
         // Nastavení RecyclerView pro zobrazení poznámek
         setEventsAdapter();
 
-        // Tlačítko pro přidání nové poznámky
+
+        Button openActivityButton = findViewById(R.id.buttonSky);
+
+        // Nastavte onClickListener
+        openActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Vytvořte intent pro otevření nové aktivity
+                Intent intent = new Intent(DayDetailActivity.this, starChart.class);
+
+                // Můžete přidat extra data (volitelné)
+                intent.putExtra("key", "Hodnota pro předání");
+
+                // Spusťte novou aktivitu
+                startActivity(intent);
+            }});
+
+
+                // Tlačítko pro přidání nové poznámky
         addNoteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +85,8 @@ public class DayDetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(DayDetailActivity.this, EventDetailActivity.class);
                 intent.putExtra("event_id", event.getId());
                 startActivity(intent);
+
+
             }
         });
         eventsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -77,4 +99,6 @@ public class DayDetailActivity extends AppCompatActivity {
         // Aktualizace seznamu poznámek při návratu z EventEditActivity
         setEventsAdapter();
     }
+
+
 }
