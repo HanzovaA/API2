@@ -65,7 +65,7 @@ class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder>
             // Výchozí barva pro ostatní dny
             else {
                 holder.dayOfMonth.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), android.R.color.transparent));
-                holder.dayOfMonth.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.black));
+                holder.dayOfMonth.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.white));
             }
         }
     }
