@@ -1,5 +1,4 @@
 package com.example.dashbtest;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,8 +19,21 @@ import java.util.Map;
 import android.app.DatePickerDialog;
 import java.util.Calendar;
 import android.widget.DatePicker;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+import androidx.core.content.ContextCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.annotation.NonNull;
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+
+
 public class starChartArea extends AppCompatActivity {
 
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
+    private FusedLocationProviderClient fusedLocationClient;
     private EditText latitudeInput, longitudeInput, dateInput;
     private ImageView starChartImage;
     private Button datePickerButton;
@@ -41,6 +53,8 @@ public class starChartArea extends AppCompatActivity {
         starChartImage = findViewById(R.id.starChartImage);
         datePickerButton = findViewById(R.id.datePickerButton);
 
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        requestLocationPermission();
 
         datePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +69,54 @@ public class starChartArea extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
+
+    private void requestLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
+        } else {
+            getLastKnownLocation();
+        }
+    }
+
+    private void getLastKnownLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    latitudeInput.setText(String.valueOf(location.getLatitude()));
+                    longitudeInput.setText(String.valueOf(location.getLongitude()));
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLastKnownLocation();
+            }
+        }
+    }
+
+
+
+
+
+
+
 
     private void showDatePickerDialog() {
         final Calendar calendar = Calendar.getInstance();

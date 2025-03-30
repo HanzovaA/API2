@@ -1,18 +1,27 @@
 package com.example.dashbtest;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.squareup.picasso.Picasso;
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -23,7 +32,8 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 
 public class starChartCon extends AppCompatActivity {
-
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
+    private FusedLocationProviderClient fusedLocationClient;
     private Spinner constellationSpinner;
     private EditText latitudeInput, longitudeInput, dateInput;
     private ImageView starChartImage;
@@ -45,6 +55,8 @@ public class starChartCon extends AppCompatActivity {
         constellationSpinner = findViewById(R.id.constellationSpinner);
         datePickerButton = findViewById(R.id.datePickerButton);
 
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        requestLocationPermission();
 
         datePickerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +71,63 @@ public class starChartCon extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
+
+    private void requestLocationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_PERMISSION_REQUEST_CODE);
+        } else {
+            getLastKnownLocation();
+        }
+    }
+
+    private void getLastKnownLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location != null) {
+                    latitudeInput.setText(String.valueOf(location.getLatitude()));
+                    longitudeInput.setText(String.valueOf(location.getLongitude()));
+                }
+            }
+        });
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLastKnownLocation();
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void showDatePickerDialog() {
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
