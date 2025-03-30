@@ -12,37 +12,30 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.dashbtest.calendar.MainActivity4;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main5);
 
-        CardView myCard = findViewById(R.id.my_card);
-        myCard.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+
+        CardView cardView1 = findViewById(R.id.cardView1);
+        cardView1.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity5.this, starChartCon.class);
+            startActivity(intent);
+        });
+
+        CardView cardView2 = findViewById(R.id.cardView2);
+        cardView2.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity5.this, starChartArea.class);
             startActivity(intent);
         });
 
 
-        CardView myCard2 = findViewById(R.id.my_card2);
-        myCard2.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity3.class);
-            startActivity(intent);
-        });
-        CardView myCard3 = findViewById(R.id.my_card3);
-        myCard3.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity4.class);
-            startActivity(intent);
-        });
 
-        CardView myCard4 = findViewById(R.id.my_card4);
-        myCard4.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainActivity5.class);
-            startActivity(intent);
-        });
+
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

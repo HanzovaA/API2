@@ -38,21 +38,6 @@ public class DayDetailActivity extends AppCompatActivity {
         setEventsAdapter();
 
 
-        Button openActivityButton = findViewById(R.id.buttonSky);
-
-        // Nastavte onClickListener
-        openActivityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Vytvořte intent pro otevření nové aktivity
-                Intent intent = new Intent(DayDetailActivity.this, starChart.class);
-
-                // Můžete přidat extra data (volitelné)
-                intent.putExtra("key", "Hodnota pro předání");
-
-                // Spusťte novou aktivitu
-                startActivity(intent);
-            }});
 
 
                 // Tlačítko pro přidání nové poznámky

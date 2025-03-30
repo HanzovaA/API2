@@ -26,21 +26,7 @@
         android:layout_weight="1"
         android:layout_marginBottom="15dp"/>
 
-    <!-- Tlačítko pro přidání nové poznámky -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/sky"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginBottom="10dp"
-        >
 
-        <Button
-            android:id="@+id/buttonSky"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Zobrazit oblohu "
-            android:textColorLink="#80DEEA" />
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/sunset"

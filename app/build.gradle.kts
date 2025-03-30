@@ -53,4 +53,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10")  // Práce s JSON
     implementation("androidx.recyclerview:recyclerview:1.2.1")  // RecyclerView pro seznam
     implementation("com.squareup.picasso:picasso:2.8")  // Načítání obrázků
+    implementation ("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation ("com.squareup.picasso:picasso:2.71828")
 }
