@@ -32,7 +32,7 @@ import android.widget.DatePicker;
 import android.widget.Spinner;
 
 public class starChartCon extends AppCompatActivity {
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;// Konstantní hodnota pro identifikaci žádosti o oprávnění k poloze
     private FusedLocationProviderClient fusedLocationClient;
     private Spinner constellationSpinner;
     private EditText latitudeInput, longitudeInput, dateInput;
@@ -55,7 +55,7 @@ public class starChartCon extends AppCompatActivity {
         constellationSpinner = findViewById(R.id.constellationSpinner);
         datePickerButton = findViewById(R.id.datePickerButton);
 
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this); // Inicializace klienta pro získání polohy zařízení
         requestLocationPermission();
 
         datePickerButton.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +76,7 @@ public class starChartCon extends AppCompatActivity {
 
 
 
-
+    // Metoda pro požádání o oprávnění k poloze
     private void requestLocationPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -86,11 +86,11 @@ public class starChartCon extends AppCompatActivity {
             getLastKnownLocation();
         }
     }
-
+    // Metoda pro získání poslední známé polohy
     private void getLastKnownLocation() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            return;
+            return;// Pokud není oprávnění uděleno, metoda nic neprovede
         }
         fusedLocationClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
             @Override
@@ -103,7 +103,7 @@ public class starChartCon extends AppCompatActivity {
         });
     }
 
-
+    // Metoda reagující na výsledek žádosti o oprávnění
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -119,15 +119,7 @@ public class starChartCon extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
+    // Metoda pro zobrazení dialogu pro výběr data
     private void showDatePickerDialog() {
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -197,6 +189,7 @@ public class starChartCon extends AppCompatActivity {
                             }
                         }
                     }) {
+                // Přidání záhlaví do HTTP požadavku, kde je potřeba autentizace
                 @Override
                 public Map<String, String> getHeaders() {
                     Map<String, String> headers = new HashMap<>();

@@ -25,7 +25,7 @@ public class MainActivity3 extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        apiClient2 = new ApiClient2(this);
+        apiClient2 = new ApiClient2(this);// Volání metody getUpcomingLaunches pro získání seznamu nadcházejících startů raket
         apiClient2.getUpcomingLaunches(new ApiClient2.LaunchCallback() {
             @Override
             public void onSuccess(List<Launch> launches) {

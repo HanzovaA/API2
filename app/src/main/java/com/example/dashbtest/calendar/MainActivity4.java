@@ -55,7 +55,7 @@ public class MainActivity4 extends AppCompatActivity implements CalendarAdapter.
         monthYearText = findViewById(R.id.monthYearTV);
     }
 
-    private void setMonthView()
+    private void setMonthView()  // Metoda pro nastavení měsíčního zobrazení kalendáře
     {
         monthYearText.setText(monthYearFromDate(selectedDate));
         ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);
@@ -66,7 +66,7 @@ public class MainActivity4 extends AppCompatActivity implements CalendarAdapter.
         calendarRecyclerView.setAdapter(calendarAdapter);
     }
 
-    private ArrayList<String> daysInMonthArray(LocalDate date)
+    private ArrayList<String> daysInMonthArray(LocalDate date) // Metoda pro získání seznamu dní v aktuálním měsíci
     {
         ArrayList<String> daysInMonthArray = new ArrayList<>();
         YearMonth yearMonth = YearMonth.from(date);
