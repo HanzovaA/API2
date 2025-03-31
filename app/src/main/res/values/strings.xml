@@ -4,8 +4,9 @@
     <string name="rocket_image" />
     <string name="back"><![CDATA[<-]]></string>
     <string name="forward"><![CDATA[->]]></string>
+    <string name="rocket_launches">Rocket launches</string>
     <string-array name="constellations">
-        <item >Ori</item> <!-- orion -->
+        <item>Ori</item> <!-- orion -->
         <item>Leo</item>
         <item>Sco</item>
         <item>And</item>

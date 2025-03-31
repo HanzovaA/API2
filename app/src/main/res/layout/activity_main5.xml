@@ -5,47 +5,62 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bck2"
     tools:context=".MainActivity5">
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="103dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="60dp"
         android:text="Star Chart"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_width="317dp"
+        android:layout_height="61dp"
+        app:cardBackgroundColor="#7E57C2"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.354"
-        tools:layout_editor_absoluteX="-16dp">
+        app:layout_constraintVertical_bias="0.357">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Constellation" />
+            android:layout_gravity="center"
+            android:text="Constellation"
+            android:textColor="#FBFBFB"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
-        android:layout_width="match_parent"
+        android:layout_width="317dp"
         android:layout_height="50dp"
+        app:cardBackgroundColor="#7E57C2"
+        app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView1"
-        app:layout_constraintVertical_bias="0.278"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintVertical_bias="0.267">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="area" />
+            android:layout_gravity="center"
+            android:text="area"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

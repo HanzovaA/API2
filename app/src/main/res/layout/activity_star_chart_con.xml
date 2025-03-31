@@ -3,20 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@drawable/bck4"
+    >
 
     <EditText
         android:id="@+id/latitudeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FBFBFB"
         android:hint="Latitude"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+
+        android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/longitudeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Longitude"
+        android:textColor="@color/white"
+        android:backgroundTint="#FBFBFB"
         android:inputType="numberDecimal|numberSigned" />
 
 
@@ -24,7 +31,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:backgroundTint="#FBFBFB">
 
         <EditText
             android:id="@+id/dateInput"
@@ -32,6 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Vyberte datum"
+            android:textColor="@color/white"
+            android:backgroundTint="#FBFBFB"
             android:focusable="false"
             android:clickable="true" />
 
@@ -45,7 +56,9 @@
         android:id="@+id/constellationSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/constellations" />
+        android:entries="@array/constellations"
+        android:textColor="@color/white"
+        android:backgroundTint="#FBFBFB"/>
     <Button
         android:id="@+id/generateButton"
         android:layout_width="wrap_content"

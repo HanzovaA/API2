@@ -5,14 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bckplanet"
+    android:background="@drawable/astr2"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="355dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/astr" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="175dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="300dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +49,7 @@
                     android:layout_below="@id/imageView"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="7dp"
-                    android:text="Rocket launches"
+                    android:text="@string/rocket_launches"
                     android:textSize="16sp" />
 
                 <ImageView
@@ -70,6 +80,9 @@
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:foregroundGravity="center"
                     app:srcCompat="@drawable/apod" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -93,7 +106,31 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardBackgroundColor="#B39DDB"
-            app:cardCornerRadius="10dp" />
+            app:cardCornerRadius="10dp" >
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:text="Calendar and notes"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:background="#7E57C2"
+                app:srcCompat="@drawable/calend" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/my_card4"
@@ -102,6 +139,30 @@
             android:layout_margin="10dp"
             android:layout_weight="1"
             app:cardBackgroundColor="#B39DDB"
-            app:cardCornerRadius="10dp" />
+            app:cardCornerRadius="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imageView4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:text="Star chart"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="125dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="7dp"
+                android:background="#7E57C2"
+                app:srcCompat="@drawable/starchart" />
+        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
