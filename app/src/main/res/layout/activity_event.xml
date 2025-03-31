@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".calendar.EventEditActivity">
+    tools:context=".calendar.EventEditActivity"
+    android:background="@drawable/moonbck"
+    >
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,18 +14,23 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Title:"
-        android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/eventTitleET"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:textSize="20sp"
-    android:ems="10"
-    android:inputType="text"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,18 +38,23 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Content:"
-        android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/eventContentET"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:textSize="20sp"
-    android:ems="10"
-    android:inputType="textMultiLine"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/eventDateTV"
@@ -51,9 +63,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Date"
-        android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/eventTimeTV"
@@ -62,9 +76,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:text="Time"
-        android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/selectImageButton"

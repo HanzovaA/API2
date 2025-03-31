@@ -26,6 +26,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#705EFF"
             android:orientation="vertical">
 
             <TextView
@@ -54,7 +55,7 @@
                 android:id="@+id/launch_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#170BD1"
+                android:textColor="#F4F4F6"
                 android:textSize="17sp"
                 android:textStyle="italic" />
         </LinearLayout>

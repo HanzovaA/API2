@@ -4,23 +4,40 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/bck4"
+    android:background="@drawable/bck5"
     >
 
-
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Star chart - Area"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
     <EditText
         android:id="@+id/latitudeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Latitude"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="#FDFBFB"
+        android:textColorHighlight="#FDFCFC"
+        android:layout_marginTop="40dp"
+        />
 
     <EditText
         android:id="@+id/longitudeInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Longitude"
-        android:inputType="numberDecimal|numberSigned" />
+        android:inputType="numberDecimal|numberSigned"
+        android:textColor="@color/white"
+        android:textColorHint="#FDFBFB"
+        android:textColorHighlight="#FDFCFC"
+        />
 
 
     <LinearLayout
@@ -36,7 +53,11 @@
             android:layout_weight="1"
             android:hint="Vyberte datum"
             android:focusable="false"
-            android:clickable="true" />
+            android:clickable="true"
+            android:textColor="@color/white"
+            android:textColorHint="#FDFBFB"
+            android:textColorHighlight="#FDFCFC"
+            />
 
         <Button
             android:id="@+id/datePickerButton"
