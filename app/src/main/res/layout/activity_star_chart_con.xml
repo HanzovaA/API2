@@ -8,7 +8,7 @@
     android:orientation="vertical"
 
     android:padding="16dp"
-    android:textColor="@color/white">
+    >
 
     <TextView
         android:id="@+id/textView6"
@@ -78,9 +78,8 @@
         android:layout_width="127dp"
         android:layout_height="wrap_content"
         android:background="#FAF7F7"
-        android:backgroundTint="#FBFBFB"
         android:entries="@array/constellations"
-        android:textColor="#FFFFFF" />
+        />
 
     <Button
         android:id="@+id/generateButton"
